@@ -1,0 +1,24 @@
+{
+  "gen_model": "claude-haiku-4-5",
+  "judge_model": "claude-sonnet-4-6",
+  "n_tasks": 36,
+  "repeats": 3,
+  "temperature": 0.7,
+  "mean_correct_C": 0.9722,
+  "mean_correct_D": 1.0,
+  "diff_D_minus_C": 0.0278,
+  "ci95": [
+    0.0,
+    0.0833
+  ],
+  "delta": 0.05,
+  "non_inferior": true,
+  "pairwise": {
+    "C": 1,
+    "D": 4,
+    "tie": 103
+  },
+  "pairwise_D_pref_excl_ties": 0.8,
+  "cost_usd": 0.7164,
+  "elapsed_s": 1307.9
+}

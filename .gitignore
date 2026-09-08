@@ -1,0 +1,4 @@
+_source_text.txt
+*.log
+__pycache__/
+*.pyc
