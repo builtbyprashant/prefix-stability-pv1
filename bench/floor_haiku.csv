@@ -1,0 +1,3 @@
+N,arch,fresh_in,fresh_in_sd,cache_read,cache_read_sd,cache_write,cache_write_sd,hit_rate,hit_rate_sd,billed_in,billed_in_sd,cost_usd,cost_usd_sd,latency_s,latency_s_sd
+2,unified,3997.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,3997.0,0.0,0.004157,0.0,1.969,0.0
+4,unified,10600.0,0.0,0.0,0.0,0.0,0.0,0.0,0.0,10600.0,0.0,0.01092,0.0,2.661,0.0
