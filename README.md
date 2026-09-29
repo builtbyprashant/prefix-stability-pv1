@@ -30,7 +30,7 @@ This paper explains **exactly when caching helps, when it silently fails, and wh
 - [Limitations and honest scope](#limitations-and-honest-scope)
 - [Glossary](#glossary)
 - [Repository layout](#repository-layout)
-- [Citation](#citation)
+- [Citation and license](#citation-and-license)
 
 ---
 
@@ -231,10 +231,14 @@ results/
   raw_smoke.jsonl / summary_smoke.json
 ```
 
-The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded. Separate from the [`genai-doc-assistant`](https://github.com/builtbyprashant/genai-doc-assistant) repository, the RAG learning project this finding came out of (its sample documents are the corpus here); the corpus is three public encyclopedia articles (AI, AGI, ML). Released for transparency and independent reproduction under the terms in [`LICENSE`](LICENSE).
+The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded.
 
 ---
 
-## Citation
+## Citation and license
 
-Paper: *Prefix Stability for Prompt Caching in LLM Agents: When It Helps and When It Backfires.* GlobalSouthAI workshop, NeurIPS 2026. The full author block and canonical citation are in the published camera-ready; this repository is kept de-identified by design.
+**Paper.** *Prefix Stability for Prompt Caching in LLM Agents: When It Helps and When It Backfires.* GlobalSouthAI workshop, NeurIPS 2026. The full author block and canonical citation are in the published camera-ready; this repository is kept de-identified by design.
+
+**License.** Released for transparency and independent reproduction under a view-and-reproduce license (see [`LICENSE`](LICENSE)): you may view, download, and run the code and data to reproduce the results; any other use, redistribution, or modification is by permission.
+
+**Related project.** This study grew out of [`genai-doc-assistant`](https://github.com/builtbyprashant/genai-doc-assistant), a RAG learning project whose sample documents form the QA corpus used here.
