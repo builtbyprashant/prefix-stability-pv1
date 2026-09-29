@@ -178,7 +178,7 @@ To re-measure from scratch (costs a few API cents; the committed data is authori
 
 ---
 
-## Methods (for the technical reader)
+## Methods 
 
 - **Cost harness** (`bench/cache_prefix_bench.py`). Drives a fixed-length loop under all four architectures and records `input_tokens`, `cache_read_input_tokens`, and `cache_creation_input_tokens` from the provider usage payload. Loop length is fixed on purpose: this is an **input-side** effect, so holding the model's decisions constant isolates the architecture variable. Billed input = `fresh + 1.25·writes + 0.1·reads` (base input price factored out); with Anthropic 5-minute ephemeral caching, one breakpoint at the end of the stable prefix, calls within the TTL. Token counts are deterministic (σ = 0). Defaults to a no-spend analytical dry-run; `--live` measures against the API.
 - **Quality A/B** (`ab_experiment.py`). Two 2-turn loops (explore → synthesize) differing in **exactly one thing**, whether per-turn intent lives in a switched system prompt (C) or the trailing user message (D); the instruction text is byte-identical across arms. Generator: `claude-haiku-4-5` at temperature 0.7. Judge: `claude-sonnet-4-6` (a different, stronger model, to avoid self-preference), grading pointwise correctness and a blind, order-randomized pairwise winner. Metric is **non-inferiority**, not superiority: paired difference `mean(D) − mean(C)` with a 95% paired bootstrap CI over tasks (seed 0, 5000 resamples, so it recomputes exactly), non-inferiority margin 0.05.
