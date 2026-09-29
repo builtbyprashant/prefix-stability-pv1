@@ -13,6 +13,8 @@ Modern AI "agents" work by calling a language model over and over in a loop, eac
 
 This paper explains **exactly when caching helps, when it silently fails, and when it backfires**, backs it with a cost model and live measurements on production models, gives a **one-line rule** to avoid the trap, and shows a **free way to detect** it from a field the API already returns in its ordinary usage payload.
 
+**Origin.** This work grew out of [genai-doc-assistant](https://github.com/builtbyprashant/genai-doc-assistant), a hands-on learning project on retrieval-augmented generation (RAG) that runs an agentic ReAct loop with full token and timing visibility. While profiling that loop, the silent cache breakage described here surfaced in the numbers, and chasing it down became this study; the answer-quality corpus used here is drawn from that project's sample documents.
+
 ---
 
 ## Contents
@@ -229,7 +231,7 @@ results/
   raw_smoke.jsonl / summary_smoke.json
 ```
 
-The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded. Separate from the `genai-doc-assistant` repository; the corpus is three public encyclopedia articles (AI, AGI, ML). Released for transparency and independent reproduction under the terms in [`LICENSE`](LICENSE).
+The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded. Separate from the [`genai-doc-assistant`](https://github.com/builtbyprashant/genai-doc-assistant) repository, the RAG learning project this finding came out of (its sample documents are the corpus here); the corpus is three public encyclopedia articles (AI, AGI, ML). Released for transparency and independent reproduction under the terms in [`LICENSE`](LICENSE).
 
 ---
 
