@@ -1,0 +1,20 @@
+Copyright (c) 2026 The Author(s) of "Prefix Stability for Prompt Caching in LLM
+Agents: When It Helps and When It Backfires."
+
+All rights reserved.
+
+This repository (code and data) is made public for transparency, peer review, and
+independent reproduction of the results reported in the associated paper. You are
+permitted to view, download, and run the code and data for the sole purpose of
+reproducing and verifying those results.
+
+Any other use, including redistribution, modification, creation of derivative works,
+or incorporation into other software, datasets, models, or publications, requires the
+author's prior written permission.
+
+THE SOFTWARE AND DATA ARE PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+PARTICULAR PURPOSE, AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHOR BE LIABLE FOR ANY
+CLAIM, DAMAGES, OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT, OR
+OTHERWISE, ARISING FROM, OUT OF, OR IN CONNECTION WITH THE SOFTWARE OR DATA OR THE USE
+OR OTHER DEALINGS IN THE SOFTWARE OR DATA.

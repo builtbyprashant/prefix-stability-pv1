@@ -3,7 +3,7 @@
 
 A study of a small, common design choice in AI agents that can **silently multiply your bill**, sometimes making a "cost-saving" feature cost *more* than switching it off. This repository is both the paper's companion and its **single source of truth**: one command regenerates every result number in the paper (see [Reproduce](#part-6-reproduce-every-number-yourself)).
 
-*Accepted at the GlobalSouthAI workshop, NeurIPS 2026. This repo is a private, de-identified reproduction snapshot frozen at the accepted-paper state.*
+*Accepted at the GlobalSouthAI workshop, NeurIPS 2026. This repository is a public, de-identified reproduction snapshot frozen at the accepted-paper state, released under a view-and-reproduce license (see [`LICENSE`](LICENSE)).*
 
 ---
 
@@ -229,7 +229,7 @@ results/
   raw_smoke.jsonl / summary_smoke.json
 ```
 
-The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded. Kept private and separate from the public `genai-doc-assistant` repository; the corpus is three public encyclopedia articles (AI, AGI, ML).
+The API key, when re-measuring, is read from the `ANTHROPIC_API_KEY` environment variable and never hardcoded. Separate from the `genai-doc-assistant` repository; the corpus is three public encyclopedia articles (AI, AGI, ML). Released for transparency and independent reproduction under the terms in [`LICENSE`](LICENSE).
 
 ---
 
