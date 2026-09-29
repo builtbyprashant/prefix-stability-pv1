@@ -19,14 +19,14 @@ This paper explains **exactly when caching helps, when it silently fails, and wh
 
 ## Contents
 
-- [Part 1: The idea, in plain language](#part-1-the-idea-in-plain-language)
+- [Part 1: The Idea](#part-1-the-idea)
 - [Part 2: The four ways to build the loop](#part-2-the-four-ways-to-build-the-loop)
 - [Part 3: Why it costs what it costs](#part-3-why-it-costs-what-it-costs)
 - [Part 4: What we measured](#part-4-what-we-measured)
 - [Part 5: The one rule, and how to check your own agent](#part-5-the-one-rule-and-how-to-check-your-own-agent)
 - [What's new here, and what isn't](#whats-new-here-and-what-isnt)
 - [Part 6: Reproduce every number yourself](#part-6-reproduce-every-number-yourself)
-- [Methods (for the technical reader)](#methods-for-the-technical-reader)
+- [Methods](#methods)
 - [Limitations and honest scope](#limitations-and-honest-scope)
 - [Glossary](#glossary)
 - [Repository layout](#repository-layout)
@@ -34,7 +34,7 @@ This paper explains **exactly when caching helps, when it silently fails, and wh
 
 ---
 
-## Part 1: The idea, in plain language
+## Part 1: The Idea
 
 ### What is an "agent loop"?
 
@@ -178,7 +178,7 @@ To re-measure from scratch (costs a few API cents; the committed data is authori
 
 ---
 
-## Methods 
+## Methods
 
 - **Cost harness** (`bench/cache_prefix_bench.py`). Drives a fixed-length loop under all four architectures and records `input_tokens`, `cache_read_input_tokens`, and `cache_creation_input_tokens` from the provider usage payload. Loop length is fixed on purpose: this is an **input-side** effect, so holding the model's decisions constant isolates the architecture variable. Billed input = `fresh + 1.25·writes + 0.1·reads` (base input price factored out); with Anthropic 5-minute ephemeral caching, one breakpoint at the end of the stable prefix, calls within the TTL. Token counts are deterministic (σ = 0). Defaults to a no-spend analytical dry-run; `--live` measures against the API.
 - **Quality A/B** (`ab_experiment.py`). Two 2-turn loops (explore → synthesize) differing in **exactly one thing**, whether per-turn intent lives in a switched system prompt (C) or the trailing user message (D); the instruction text is byte-identical across arms. Generator: `claude-haiku-4-5` at temperature 0.7. Judge: `claude-sonnet-4-6` (a different, stronger model, to avoid self-preference), grading pointwise correctness and a blind, order-randomized pairwise winner. Metric is **non-inferiority**, not superiority: paired difference `mean(D) − mean(C)` with a 95% paired bootstrap CI over tasks (seed 0, 5000 resamples, so it recomputes exactly), non-inferiority margin 0.05.
